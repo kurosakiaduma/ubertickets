@@ -2,7 +2,7 @@
 (function($) {
     'use strict';
     var $body = $('html, body'), // Define jQuery collection
-        var content = $('#main').smoothState({
+        content = $('#main').smoothState({
             // onStart runs as soon as link has been activated
             onStart: {
 
