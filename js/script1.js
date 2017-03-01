@@ -12,6 +12,11 @@
 
             // Quickly toggles a class and restarts css animations
             content.toggleAnimationClass('is-exiting');
+
+            // Scroll user to the top
+                       $body.animate({ 'scrollTop': 0 });
+
+
           }
         }
       }).data('smoothState'); // makes public methods available
