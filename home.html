@@ -149,9 +149,24 @@
                     <h4 class="modal-title" style="text-align-last: center">Movies+Tickets</h4>
                 </div>
                 <div class="modal-body">
-                    <select id="release">
-                        <option value="ex">Exclusive</option>
-                         <option value="nonex">Non exclusive</option>
+                    <p>Choose the type of movie you would like to watch</p>
+                    <select  required id="release">
+                        <option value="ex">Exclusive (Latest)</option>
+                         <option value="nonex">Non exclusive (Earlier releases)</option>
+                    </select>
+
+                    <p id="genre0">Please select a genre</p>
+                        <select  required id="genre0">
+                        <option value="animation0">Animation</option>
+                         <option value="fantasy0">Fantasy</option>
+                          <option value="action0">Action</option>
+                    </select>
+
+                        <p id="genre1">Please select a genre</p>
+                    <select  required id="genre1">
+                        <option value="animation1">Animation</option>
+                         <option value="fantasy1">Fantasy</option>
+                          <option value="action1">Action</option>
                     </select>
                 </div>
                 <div class="modal-footer">
