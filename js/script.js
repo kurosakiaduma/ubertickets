@@ -23,6 +23,7 @@ $(document).ready(function() {
 
     $("#release").change(function() {
         $("#genre").show();
+        $("#totalPrice").hide();
         $("#label-g").show();
         $("#label-m").hide();
         $("#movies").hide();
@@ -37,6 +38,7 @@ $(document).ready(function() {
 
 
     $("#genre").change(function() {
+        $("#totalPrice").show();
         $('#legobatman').hide();
         $('#cars3').hide();
         $('#moana').hide();
@@ -199,10 +201,64 @@ $(document).ready(function() {
 
 
 
+        if ($("#movies").val() == "legobatman") {
+            moviesPrice["legobatman"] = 1;
+        } else if ($("#movies").val() == "cars3") {
+            moviesPrice["cars3"] = 1;
+        } else if ($("#movies").val() == "moana") {
+            moviesPrice["moana"] = 1;
+        } else if ($("#movies").val() == "fd") {
+            moviesPrice["fd"] = 1;
+        } else if ($("#movies").val() == "bb") {
+            moviesPrice["bb"] = 2;
+        } else if ($("#movies").val() == "aw") {
+            moviesPrice["aw"] = 2;
+        } else if ($("#movies").val() == "passengers") {
+            moviesPrice["passengers"] = 2;
+        } else if ($("#movies").val() == "fbw") {
+            moviesPrice["fbw"] = 2;
+        } else if ($("#movies").val() == "bvs") {
+            moviesPrice["bvs"] = 3;
+        } else if ($("#movies").val() == "civil") {
+            moviesPrice["civil"] = 3;
+        } else if ($("#movies").val() == "jla") {
+            moviesPrice["jla"] = 3;
+        } else if ($("#movies").val() == "thor") {
+            moviesPrice["thor"] = 3;
+        } else if ($("#movies").val() == "tlk") {
+            moviesPrice["tlk"] = 1;
+        } else if ($("#movies").val() == "fla") {
+            moviesPrice["fla"] = 1;
+        } else if ($("#movies").val() == "oth") {
+            moviesPrice["oth"] = 1;
+        } else if ($("#movies").val() == "mh") {
+            moviesPrice["mh"] = 1;
+        } else if ($("#movies").val() == "hp") {
+            moviesPrice["hp"] = 2;
+        } else if ($("#movies").val() == "pj") {
+            moviesPrice["pj"] = 2;
+        } else if ($("#movies").val() == "tbfg") {
+            moviesPrice["tbfg"] = 2;
+        } else if ($("#movies").val() == "wrc") {
+            moviesPrice["wrc"] = 2;
+        } else if ($("#movies").val() == "spectre") {
+            moviesPrice["spectre"] = 3;
+        } else if ($("#movies").val() == "mip") {
+            moviesPrice["mip"] = 3;
+        } else if ($("#movies").val() == "jwo") {
+            moviesPrice["jwo"] = 3;
+        } else if ($("#movies").val() == "uncle") {
+            moviesPrice["uncle"] = 3;
+        }
+
 
         var release = $("#release");
         var genre = $("#genre");
-        totalPrice = releasePrice[release.val()] + genrePrice[genre.val()];
+        var movies = $("#movies");
+
+        totalPrice = releasePrice[release.val()] + genrePrice[genre.val()] +
+            moviesPrice[movies.val()];
+
         $("#totalPrice").html("Your cost for the movie is $" + totalPrice);
 
     }
