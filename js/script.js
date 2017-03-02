@@ -142,24 +142,34 @@ $(document).ready(function() {
                 $('#uncle').hide();
             }
         });
-
-
     });
 
-    var release_prices = new Array();
-    release_prices["ex"] = 10;
-    release_prices["nonex"] = 5;
+    $("#release").change(getPrice);
 
-    // getReleasePrice() finds the price based on the release type of the movie.
-    // Here, we need to take user's the selection from the sselection
-    function getReleasePrice() {
-        var movieReleasePrice = 0;
-        var selectedMovie = document.getElementById('release')
-            cakeFillingPrice = release_prices[release.value];
-        //We return the cakeSizePrice
-        return moviesReleasePrice;
+    // Function executes on change of first select option field.
+    $("#release").change(function() {
+        var selectedRelease = $("#release option:selected").val();
+    });
+
+
+    //Initializing price array
+    var releasePrice = new Array();
+
+    //Function to calculate price
+    function getPrice() {
+        var totalPrice = 0;
+        if ($("#release").val() == "ex") {
+            releasePrice["ex"] = 12;
+        } else {
+            releasePrice["nonex"] = 5;
+        }
+
+
+        var release = $("#release");
+        totalPrice = releasePrice[release.val()];
+        $("#totalPrice").html("Your cost for the movie is $" + totalPrice);
+
     }
-
 
 
 });
