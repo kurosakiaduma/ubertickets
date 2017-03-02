@@ -171,10 +171,11 @@
 
 
                     <p>Choose the type of movie you would like to watch</p>
-                    <select name="release" required id="release">
+                    <select name="release" required id="release" onchange="calculateTotal()">
                         <option value="ex" selected="selected">Exclusive (Latest)</option>
                         <option value="nonex">Non exclusive (Earlier releases)</option>
                     </select>
+                    <div id="totalPrice"></div>
 
                     <p id="label-g">Please select a genre</p>
                     <select name="genre" required id="genre">

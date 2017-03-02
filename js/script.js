@@ -147,5 +147,9 @@ $(document).ready(function() {
             }
         });
 
+
     });
+
+    var ticketPrice - document.getElementById('release');
+
 });
