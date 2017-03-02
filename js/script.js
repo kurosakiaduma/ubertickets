@@ -145,6 +145,10 @@ $(document).ready(function() {
     });
 
     $("#release").change(getPrice);
+    $("#genre").change(getPrice);
+    $("#movies").change(getPrice);
+
+
 
     // Function executes on change of first select option field.
     $("#release").change(function() {
@@ -152,21 +156,53 @@ $(document).ready(function() {
     });
 
 
+    // Function executes on change of second select option field.
+    $("#genre").change(function() {
+        var selectedGenre = $("#genre option:selected").val();
+    });
+
+    // Function executes on change of third select option field.
+    $("#movies").change(function() {
+        var selectedMovie = $("#movies option:selected").val();
+    });
+
+
     //Initializing price array
     var releasePrice = new Array();
+    var genrePrice = new Array();
+    var moviesPrice = new Array();
+
+
 
     //Function to calculate price
     function getPrice() {
         var totalPrice = 0;
         if ($("#release").val() == "ex") {
-            releasePrice["ex"] = 12;
+            releasePrice["ex"] = 10;
         } else {
             releasePrice["nonex"] = 5;
         }
 
+        if ($("#genre").val() == "animationnew") {
+            genrePrice["animationnew"] = 2;
+        } else if ($("#genre").val() == "fantasynew") {
+            genrePrice["fantasynew"] = 3;
+        } else if ($("#genre").val() == "actionnew") {
+            genrePrice["actionnew"] = 4;
+        } else if ($("#genre").val() == "animationold") {
+            genrePrice["animationold"] = 1;
+        } else if ($("#genre").val() == "fantasyold") {
+            genrePrice["fantasyold"] = 1;
+        } else if ($("#genre").val() == "actionold") {
+            genrePrice["actionold"] = 1;
+        }
+
+
+
 
         var release = $("#release");
-        totalPrice = releasePrice[release.val()];
+        var genre = $("#genre");
+        totalPrice = releasePrice[release.val()] + genrePrice[genre.val()];
         $("#totalPrice").html("Your cost for the movie is $" + totalPrice);
 
     }
