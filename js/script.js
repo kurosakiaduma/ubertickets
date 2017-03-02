@@ -21,21 +21,15 @@ $(document).ready(function() {
         clickEvent = false;
     });
 
-    function show_select()
-    {
-      var genre0 = document.getElementById("genre0");
-      var animation0 = document.getElementById("animation0");
-      var fantasy0 = document.getElementById("fantasy0");
-
-      var desired_box = genre0.options[genre0.selectedIndex].value;
-      if(desired_box == animation0) {
-        animation0.style.display = '';
-        fantasy0.style.display = 'none';
-      } else {
-        fantasy0.style.display = '';
-        animation0.style.display = 'none';
+    $("#release").change(function() {
+      if ($(this).data('options') == undefined) {
+        /*Taking an array of all options-2 and kind of embedding it on the select*/
+        $(this).data('options', $('#genre option').clone());
       }
-    }
+      var id = $(this).val();
+      var options = $(this).data('options').filter('[data-id=' + id + ']');
+      $('#genre').html(options);
+    });
 
 
 
