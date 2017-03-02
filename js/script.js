@@ -101,21 +101,17 @@ $(document).ready(function() {
                 $('#cars3').hide();
                 $('#moana').hide();
                 $('#fd').hide();
-            }
-
-            else if ($('#movies').val() == 'cars3') {
+            } else if ($('#movies').val() == 'cars3') {
                 $('#cars3').show();
                 $('#legobatman').hide();
                 $('#moana').hide();
                 $('#fd').hide();
-            }
-            else if ($('#movies').val() == 'moana') {
+            } else if ($('#movies').val() == 'moana') {
                 $('#moana').show();
                 $('#cars3').hide();
                 $('#legobatman').hide();
                 $('#fd').hide();
-            }
-            else if ($('#movies').val() == 'fd') {
+            } else if ($('#movies').val() == 'fd') {
                 $('#fd').show();
                 $('#moana').hide();
                 $('#cars3').hide();
@@ -150,6 +146,20 @@ $(document).ready(function() {
 
     });
 
-    var ticketPrice - document.getElementById('release');
+    var release_prices = new Array();
+    release_prices["ex"] = 10;
+    release_prices["nonex"] = 5;
+
+    // getReleasePrice() finds the price based on the release type of the movie.
+    // Here, we need to take user's the selection from the sselection
+    function getReleasePrice() {
+        var movieReleasePrice = 0;
+        var selectedMovie = document.getElementById('release')
+            cakeFillingPrice = release_prices[release.value];
+        //We return the cakeSizePrice
+        return moviesReleasePrice;
+    }
+
+
 
 });
