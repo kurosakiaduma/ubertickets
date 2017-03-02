@@ -146,6 +146,20 @@ $(document).ready(function() {
         });
     });
 
+    var movieTime = [
+    {display: "8AM - 11AM",value: "morning"},
+    {display: "12PM-6PM",value: "afternoon"},
+    {display: "6PM-11PM",value: "night"}
+    ];
+
+
+    var customerAge = [
+        {display: "Child (below 16 years)",value: "child"},
+        {display: "Adult",value: "adult"},
+        {display: "Senior (62+)",value: "senior"}
+        ];
+
+
     $("#release").change(getPrice);
     $("#genre").change(getPrice);
     $("#movies").change(getPrice);
