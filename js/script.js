@@ -146,23 +146,65 @@ $(document).ready(function() {
         });
     });
 
-    var movieTime = [
-    {display: "8AM - 11AM",value: "morning"},
-    {display: "12PM-6PM",value: "afternoon"},
-    {display: "6PM-11PM",value: "night"}
+    var movieTime = [{
+            display: "8AM - 11AM",
+            value: "morning"
+        },
+        {
+            display: "12PM-6PM",
+            value: "afternoon"
+        },
+        {
+            display: "6PM-11PM",
+            value: "night"
+        }
     ];
 
 
-    var customerAge = [
-        {display: "Child (below 16 years)",value: "child"},
-        {display: "Adult",value: "adult"},
-        {display: "Senior (62+)",value: "senior"}
-        ];
+    var customerAge = [{
+            display: "Child (below 16 years)",
+            value: "child"
+        },
+        {
+            display: "Adult",
+            value: "adult"
+        },
+        {
+            display: "Senior (62+)",
+            value: "senior"
+        }
+    ];
+
+    time(movieTime);
+    age(customerAge);
+
 
 
     $("#release").change(getPrice);
     $("#genre").change(getPrice);
     $("#movies").change(getPrice);
+    $("#time").change(getPrice);
+    $("#age").change(getPrice);
+
+
+    // Function To list out movie times
+    function time(arr) {
+        $("#time").empty(); //To reset
+        $("#time").append("<option>--Select--</option>");
+        $(arr).each(function(i) { //to list
+            $("#time").append("<option value=\"" + arr[i].value + "\">" + arr[i].display + "</option>")
+        });
+    }
+
+    // Function To list out age groups
+    function age(arr) {
+        $("#age").empty(); //To reset
+        $("#age").append("<option>--Select--</option>");
+        $(arr).each(function(i) { //to list
+            $("#age").append("<option value=\"" + arr[i].value + "\">" + arr[i].display + "</option>")
+        });
+    }
+
 
 
 
@@ -183,11 +225,25 @@ $(document).ready(function() {
     });
 
 
+    // Function executes on change of fourth select option field.
+    $("#time").change(function() {
+        var selectedTime = $("#time option:selected").val();
+    });
+
+
+    // Function executes on change of fifth select option field.
+    $("#age").change(function() {
+        var selectedAge = $("#age option:selected").val();
+    });
+
+
+
     //Initializing price array
     var releasePrice = new Array();
     var genrePrice = new Array();
     var moviesPrice = new Array();
-
+    var timePrice = new Array();
+    var agePrice = new Array();
 
 
     //Function to calculate price
@@ -265,10 +321,22 @@ $(document).ready(function() {
             moviesPrice["uncle"] = 3;
         }
 
+        if ($("#time").val() == "morning") {
+            timePrice["morning"] = -2;
+        } else if ($("#time").val() == "afternoon") {
+            timePrice["afternoon"] = 2;
+        } else if ($("#time").val() == "night") {
+            timePrice["night"] = 3;
+        }
+
+
 
         var release = $("#release");
         var genre = $("#genre");
         var movies = $("#movies");
+        var time = $("#time");
+        var age = $("#age");
+
 
         totalPrice = releasePrice[release.val()] + genrePrice[genre.val()] +
             moviesPrice[movies.val()];
