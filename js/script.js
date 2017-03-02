@@ -259,7 +259,7 @@ $(document).ready(function() {
         totalPrice = releasePrice[release.val()] + genrePrice[genre.val()] +
             moviesPrice[movies.val()];
 
-        $("#totalPrice").html("Your cost for the movie is $" + totalPrice);
+        $("#totalPrice").html("Your cost for the movie is KSH." + totalPrice * 100);
 
     }
 
