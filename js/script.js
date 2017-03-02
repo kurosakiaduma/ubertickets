@@ -22,13 +22,29 @@ $(document).ready(function() {
     });
 
     $("#release").change(function() {
-      if ($(this).data('options') == undefined) {
-        /*Taking an array of all options-2 and kind of embedding it on the select*/
-        $(this).data('options', $('#genre option').clone());
-      }
-      var id = $(this).val();
-      var options = $(this).data('options').filter('[data-id=' + id + ']');
-      $('#genre').html(options);
+        $("#genre").show();
+        $("#label-g").show();
+        $("#label-m").hide();
+        $("#movies").hide();
+        if ($(this).data('options') == undefined) {
+            /*Taking an array of all options-2 and kind of embedding it on the select*/
+            $(this).data('options', $('#genre option').clone());
+        }
+        var id = $(this).val();
+        var options = $(this).data('options').filter('[data-id=' + id + ']');
+        $('#genre').html(options);
+    });
+
+
+    $("#genre").change(function() {
+        $("#movies").show();
+        $("#label-m").show();
+        if ($(this).data('options') == undefined) {
+            $(this).data('options', $('#movies option').clone());
+        }
+        var id = $(this).val();
+        var options = $(this).data('options').filter('[data-id=' + id + ']');
+        $('#movies').html(options);
     });
 
 
