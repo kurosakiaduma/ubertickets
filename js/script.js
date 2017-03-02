@@ -27,6 +27,10 @@ $(document).ready(function() {
         $("#label-g").show();
         $("#label-m").hide();
         $("#movies").hide();
+        $("#label-t").hide();
+        $("#time").hide();
+        $("#label-a").hide();
+        $("#age").hide();
         if ($(this).data('options') == undefined) {
             /*Taking an array of all options-2 and kind of embedding it on the select*/
             $(this).data('options', $('#genre option').clone());
@@ -38,7 +42,10 @@ $(document).ready(function() {
 
 
     $("#genre").change(function() {
-        $("#totalPrice").show();
+        $("#label-t").hide();
+        $("#time").hide();
+        $("#label-a").hide();
+        $("#age").hide();
         $('#legobatman').hide();
         $('#cars3').hide();
         $('#moana').hide();
@@ -98,6 +105,11 @@ $(document).ready(function() {
         $('#jwo').hide();
         $('#uncle').hide();
         $("#movies").change(function() {
+
+            $("#label-t").show();
+            $("#time").show();
+            $("#label-a").show();
+            $("#age").show();
             if ($('#movies').val() == 'legobatman') {
                 $('#legobatman').show();
                 $('#cars3').hide();
@@ -145,6 +157,12 @@ $(document).ready(function() {
             }
         });
     });
+
+    $("#age").change(function() {
+
+        $("#totalPrice").show();
+    });
+
 
     var movieTime = [{
             display: "8AM - 11AM",
@@ -330,6 +348,15 @@ $(document).ready(function() {
         }
 
 
+        if ($("#age").val() == "child") {
+            agePrice["child"] = 1;
+        } else if ($("#age").val() == "adult") {
+            agePrice["adult"] = 2;
+        } else if ($("#age").val() == "senior") {
+            agePrice["senior"] = -3;
+        }
+
+
 
         var release = $("#release");
         var genre = $("#genre");
@@ -339,7 +366,9 @@ $(document).ready(function() {
 
 
         totalPrice = releasePrice[release.val()] + genrePrice[genre.val()] +
-            moviesPrice[movies.val()];
+            moviesPrice[movies.val()] +
+            timePrice[time.val()] +
+            agePrice[age.val()];
 
         $("#totalPrice").html("Your cost for the movie is KSH." + totalPrice * 100);
 
