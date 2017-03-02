@@ -48,5 +48,15 @@ $(document).ready(function() {
     });
 
 
+    $(function() {
+        $('#legobatman').hide();
+        $("#movies").change(function() {
+            if ($('#movies').val() == 'legobatman') {
+                $('#legobatman').show();
+            } else {
+                $('#legobatman').hide();
+            }
+        });
 
+    });
 });
