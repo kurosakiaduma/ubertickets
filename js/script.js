@@ -37,6 +37,29 @@ $(document).ready(function() {
 
 
     $("#genre").change(function() {
+        $('#legobatman').hide();
+        $('#cars3').hide();
+        $('#moana').hide();
+        $('#fd').hide();
+        $('#bb').hide();
+        $('#aw').hide();
+        $('#fbw').hide();
+        $('#bvs').hide();
+        $('#civil').hide();
+        $('#thor').hide();
+        $('#jla').hide();
+        $('#tlk').hide();
+        $('#fla').hide();
+        $('#oth').hide();
+        $('#mh').hide();
+        $('#hp').hide();
+        $('#pj').hide();
+        $('#tbfg').hide();
+        $('#wrc').hide();
+        $('#spectre').hide();
+        $('#mip').hide();
+        $('#jwo').hide();
+        $('#uncle').hide();
         $("#movies").show();
         $("#label-m").show();
         if ($(this).data('options') == undefined) {
@@ -50,11 +73,77 @@ $(document).ready(function() {
 
     $(function() {
         $('#legobatman').hide();
+        $('#cars3').hide();
+        $('#moana').hide();
+        $('#fd').hide();
+        $('#bb').hide();
+        $('#aw').hide();
+        $('#fbw').hide();
+        $('#bvs').hide();
+        $('#civil').hide();
+        $('#thor').hide();
+        $('#jla').hide();
+        $('#tlk').hide();
+        $('#fla').hide();
+        $('#oth').hide();
+        $('#mh').hide();
+        $('#hp').hide();
+        $('#pj').hide();
+        $('#tbfg').hide();
+        $('#wrc').hide();
+        $('#spectre').hide();
+        $('#mip').hide();
+        $('#jwo').hide();
+        $('#uncle').hide();
         $("#movies").change(function() {
             if ($('#movies').val() == 'legobatman') {
                 $('#legobatman').show();
+                $('#cars3').hide();
+                $('#moana').hide();
+                $('#fd').hide();
+            }
+
+            else if ($('#movies').val() == 'cars3') {
+                $('#cars3').show();
+                $('#legobatman').hide();
+                $('#moana').hide();
+                $('#fd').hide();
+            }
+            else if ($('#movies').val() == 'moana') {
+                $('#moana').show();
+                $('#cars3').hide();
+                $('#legobatman').hide();
+                $('#fd').hide();
+            }
+            else if ($('#movies').val() == 'fd') {
+                $('#fd').show();
+                $('#moana').hide();
+                $('#cars3').hide();
+                $('#legobatman').hide();
+
             } else {
                 $('#legobatman').hide();
+                $('#cars3').hide();
+                $('#moana').hide();
+                $('#bb').hide();
+                $('#aw').hide();
+                $('#fbw').hide();
+                $('#bvs').hide();
+                $('#civil').hide();
+                $('#thor').hide();
+                $('#jla').hide();
+                $('#tlk').hide();
+                $('#fla').hide();
+                $('#oth').hide();
+                $('#mh').hide();
+                $('#hp').hide();
+                $('#pj').hide();
+                $('#tbfg').hide();
+                $('#wrc').hide();
+                $('#spectre').hide();
+                $('#mip').hide();
+                $('#jwo').hide();
+                $('#uncle').hide();
             }
         });
 
