@@ -1,0 +1,82 @@
+#uber-bar{
+    background-color:white;
+    text-align: center;
+    font-size: 30px;
+}
+
+#tag{
+    font-size: 20px;
+}
+
+#logo{
+    height: 80px;
+    width: 100px;
+}
+
+#header{
+    background-color: white;
+    text-align: center;
+}
+
+.header_underline{
+    text-decoration: underline;
+    color: white;
+    text-align: center;
+}
+
+.carousel_info_dark{
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+}
+
+
+.carousel_info_light{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+}
+
+#myCarousel .nav a small {
+    display:block;
+}
+#myCarousel .nav {
+	background:#eee;
+}
+#myCarousel .nav a {
+    border-radius:0px;
+}
+
+body{
+    background-color: #000000;
+        font-family: 'Baloo', cursive;
+        background-size: cover;
+        overflow: hidden;
+}
+
+#ticket{
+    margin-left: 600px;
+    margin-top: 15px;
+}
+#genre, #movies, #time, #age, #label-g, #label-m, #label-t, #label-a{
+    display: none;
+}
+
+.image_poster{
+    float: right;
+}
+
+.movie_info{
+    border: 1px solid rgb(96, 96, 96);
+    text-align: center;
+}
+
+#totalPrice{
+    text-align: center;
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
